@@ -5,22 +5,32 @@ package types
 type Money int64
 
 //Category string
-type Category string
+type PaymentCategory string
 
 //Status string
-type Status string
+type PaymentStatus string
 
 //Statuses
 const (
-  StatusOk Status = "OK"
-  StatusFail Status = "FAIL"
-  StatusInProgress Status = "INPROGRESS"
+  PaymentStatusOk          PaymentStatus = "OK"
+  PaymentStatusFail        PaymentStatus = "FAIL"
+  PaymentStatusInProgress  PaymentStatus = "INPROGRESS"
 )
 
 //Payment struct have ID, Amount, Category
 type Payment struct {
   ID       int
   Amount   Money
-  Category Category
-  Status   Status
+  Category PaymentCategory
+  Status   PaymentStatus
 }
+
+type Phone string
+
+//Account informatio user
+type Account struct {
+  ID       int64
+  Phone    Phone
+  Balance  Money
+}
+
